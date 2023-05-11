@@ -1,0 +1,18 @@
+<div class="container">
+  <h1>See details of a given list and its name</h1>
+  <ul style="list-style: none">
+    <%= @list.name %>
+    <% @list.movies.each do |movie| %>
+    <li><%= image_tag movie.poster_url, alt: "poster", width: "200" %></li>
+    <li><%= movie.title %></li>
+    <li><%= movie.overview %></li>
+    <li><%= movie.rating %></li>
+    <li><%= Bookmark.find_by_movie_id(movie).comment %></li>
+    <%# link_to "Add a comment", new_list_bookmark_path(@list) %>
+
+    <li><%= link_to "Remove from list", bookmark_path(@list.bookmarks.find_by_movie_id(movie)), data: { turbo_method: :delete, turbo_confirm: "Delete?" }  %></li>
+    <% end %>
+  </ul>
+
+  <%= link_to "Back to list", lists_path, class: 'btn btn-secondary' %>
+</div>
