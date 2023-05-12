@@ -4,7 +4,7 @@
   <div class="col-4">
     <p><%= link_to list.name, list_path(list) %></p>
     <% if list.photo.attached?  %>
-    <p><%= cl_image_tag list.photo.key, height: 200, crop: :fill %></p>
+    <%= cl_image_tag list.photo.key, height: 200 crop: :fill %>
     <% else %>
     <%= image_tag 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTPQDYau3Hs4-xw1i8jVSUY4BlF4FLmg8lQqg&usqp=CAU' %>
     <% end %>
