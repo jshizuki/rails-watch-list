@@ -1,6 +1,9 @@
 source "https://rubygems.org"
 git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 
+# Manually added gems
+gem "devise"
+
 gem "autoprefixer-rails"
 
 gem "font-awesome-sass", "~> 6.1"

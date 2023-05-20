@@ -10,13 +10,11 @@
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v6.1.2/css/all.css">
   </head>
   <body>
-    <div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.5),rgba(0,0,0,0.5)), url(https://images.pexels.com/photos/1200450/pexels-photo-1200450.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1)" >
-      <div class="container">
-        <h1>My movie lists</h1>
-        <p>Watch awesome movies, live my life inspired</p>
-        <p><%= link_to "Create a new list", new_list_path, class: "btn btn-dark" %></p>
-      </div>
-    </div>
+    <% unless current_page?(new_user_session_path) %>
+      <%= render 'shared/navbar' %>
+      <%= render 'shared/banner' %>
+    <% end %>
+    <%= render "shared/flashes" %>
     <%= yield %>
   </body>
 </html>
