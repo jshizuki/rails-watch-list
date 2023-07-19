@@ -1,5 +1,6 @@
 class Bookmark < ApplicationRecord
-  self.table_name = wlist_bookmarks
+  # Checked for single-db
+  self.table_name = 'wlist_bookmarks'
   belongs_to :movie, foreign_key: 'wlist_movie_id'
   belongs_to :list, foreign_key: 'wlist_list_id'
 
