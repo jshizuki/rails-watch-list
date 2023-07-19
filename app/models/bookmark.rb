@@ -5,5 +5,6 @@ class Bookmark < ApplicationRecord
   belongs_to :list, foreign_key: 'wlist_list_id'
 
   validates :comment, length: { minimum: 6 }
-  validates :movie_id, uniqueness: { scope: :list_id, message: 'has already been bookmarked in this list' }
+  # validates :movie_id, uniqueness: { scope: :list_id, message: 'has already been bookmarked in this list' }
+  validates :wlist_movie_id, uniqueness: { scope: :wlist_list_id, message: 'has already been bookmarked in this list' }
 end
