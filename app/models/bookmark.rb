@@ -6,5 +6,7 @@ class Bookmark < ApplicationRecord
 
   validates :comment, length: { minimum: 6 }
   # validates :movie_id, uniqueness: { scope: :list_id, message: 'has already been bookmarked in this list' }
+  # Remove if doesn't work
+  validates :movie, presence: true
   validates :wlist_movie_id, uniqueness: { scope: :wlist_list_id, message: 'has already been bookmarked in this list' }
 end
