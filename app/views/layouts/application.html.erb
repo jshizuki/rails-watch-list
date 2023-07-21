@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>RailsWatchList</title>
+    <title>Rails Watch List</title>
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
@@ -10,11 +10,7 @@
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v6.1.2/css/all.css">
   </head>
   <body>
-    <% unless current_page?(new_user_session_path) %>
-      <%= render 'shared/navbar' %>
-      <%= render 'shared/banner' %>
-    <% end %>
-    <%= render "shared/flashes" %>
+    <%= render 'shared/banner' %>
     <%= yield %>
   </body>
 </html>
