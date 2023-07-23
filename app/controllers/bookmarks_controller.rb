@@ -25,7 +25,7 @@ class BookmarksController < ApplicationController
 
   def bookmark_params
     # Note that comments refer to the code before pulling into single-db
-    params.require(:bookmark).permit(:comment, :movie_id)
-    # params.require(:bookmark).permit(:comment, :wlist_movie_id)
+    # params.require(:bookmark).permit(:comment, :movie_id)
+    params.require(:bookmark).permit(:comment, :wlist_movie_id)
   end
 end
